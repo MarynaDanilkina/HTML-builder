@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const addressStyles = path.join(__dirname, 'styles');
-const addressFinish = path.join(__dirname, 'project-dist', 'bundle.css');
+const addressFinish = path.join(__dirname, 'project-dist', 'style.css');
 let str = '';
 
 fs.readdir(addressStyles, { withFileTypes: true }, (err, files) => {
