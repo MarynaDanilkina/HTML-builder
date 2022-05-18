@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const addressStyles = path.join(__dirname, 'styles');
-const addressFinish = path.join(__dirname, 'project-dist', 'style.css');
+const addressFinish = path.join(__dirname, 'project-dist', 'bundle.css');
 let str = '';
 
 fs.readdir(addressStyles, { withFileTypes: true }, (err, files) => {
@@ -17,7 +17,7 @@ fs.readdir(addressStyles, { withFileTypes: true }, (err, files) => {
         let FileExtname = path.extname(file.name);
         if (FileExtname === '.css') {
           fs.readFile(addressFile, 'utf8', (error, data) => {
-            str += data;
+            str += `${data}\n`;
             fs.writeFile(addressFinish, str, (err) => {
               if (err) {
                 throw err;
