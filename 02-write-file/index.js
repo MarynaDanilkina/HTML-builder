@@ -14,7 +14,6 @@ output.write('Hey! Enter something\n');
 const rl = readline.createInterface({ input, output });
 rl.on('line', text => {
   if (text === 'exit' || text === 'Exit') {
-    console.log('All the best');
     rl.close();
   }
   info.write(`${text}\n`);
